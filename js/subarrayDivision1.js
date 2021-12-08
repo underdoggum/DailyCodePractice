@@ -5,13 +5,18 @@
 
 
 const birthday = (segmentArr, day, month) => {
+  const reducer = (prev, curr) => prev + curr;
   let matches = 0;
 
-  
-  
-  
+  for (let i = 0; i < segmentArr.length - month + 1; i++) {
+    const subSegmentArr = segmentArr.slice(i, i + month);
+    if (subSegmentArr.reduce(reducer) === day) {
+      matches += 1;
+    }
+  }
+  return matches;  
 }
 
 
-console.log(birthday());
+console.log(birthday([4, 1], 1, 4));
 
