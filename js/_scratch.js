@@ -12,7 +12,7 @@ const myFunc = arr => {
 
 
 console.log(
-
   
+  myFunc()
 
 )
